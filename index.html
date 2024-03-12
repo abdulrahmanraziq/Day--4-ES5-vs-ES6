@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+
+    <script type="text/javascript">
+      const resumeData = {
+        name: "M.A.Abdul Rahman Raziq",
+        title: "UI / UX ARCHITECTURE & ANGULAR DEVELOPER",
+        experience: "6 YEARS OF CORE DEVELOPMENT",
+        phone: "9840548834",
+        email: "abdulrahmanraziq548@gmail.com",
+        location: "chennai",
+        summary:
+          "I am an avid user experience specialist skilled in interaction designing, information architecture, usability and development. I have experienced working in all stages of the product life cycle, from conception of design, development and validation. I work well with cross functional, collaborative teams and I am effective in bringing user-centered design methods to the table. I enjoy designing and developing simple and usable experiences",
+        technologySkill: [
+          "HTML5",
+          "CSS3",
+          "Bootstrap",
+          "JavaScript",
+          "Jquery",
+          "Angular",
+          "React",
+        ],
+        experienceSkill: [
+          {
+            company: "WIPRO PVT LTD",
+            jobTitle: "Front End Developer",
+            location: "Chennai",
+            date: "2021 - present",
+            description: "(Core Focus : UI / UX and Angular Framework)",
+          },
+          {
+            company: "Cognizant Pvt Ltd",
+            jobTitle: "Front End Developer",
+            location: "Chennai",
+            date: "2020 - 2021",
+            description: "(Core Focus : UI / UX and Angular Framework)",
+          },
+          {
+            company: "TOUCH2SUCCESS PVT LTD",
+            jobTitle: "Web Designing",
+            location: "Chennai",
+            date: "2017 - 2020",
+            description: "Web designing",
+          },
+          {
+            company: "TISCON WEBLOGIC SOLUTIONS",
+            jobTitle: "Web Designing",
+            location: "Chennai",
+            date: "2016 - 20217",
+            description: "Web designing",
+          },
+        ],
+
+        education: [
+          {
+            degree: "B.E (EEE)",
+            institution: "Anna University",
+            location: "Chennai",
+            date: "2012 -  2016",
+            percentage: "69%",
+          },
+          {
+            degree: "SSLC",
+            institution: "Seetha Kingston House Mat Hr Sec School",
+            location: "Chennai",
+            date: "2011 -  2012",
+            percentage: "84%",
+          },
+
+          {
+            degree: "HSC",
+            institution: "Seetha Kingston House Mat Hr Sec School",
+            location: "Chennai",
+            date: "2009 -  2010",
+            percentage: "81%",
+          },
+        ],
+        languages: ["English", "Tamil"],
+        links: {
+          github: "https://github.com/abdulrahmanraziq",
+        },
+      };
+
+      // For in loop
+      for (let key in resumeData) {
+        if (Array.isArray(resumeData[key])) {
+          resumeData[key].forEach((item) => console.log("array:", item));
+        } else if (typeof resumeData[key] === "object") {
+          for (let objKey in resumeData[key]) {
+            console.log(resumeData[key][objKey]);
+          }
+        } else {
+          console.log(resumeData[key]);
+        }
+      }
+
+      // For of loop
+      for (let key in resumeData) {
+        if (Array.isArray(resumeData[key])) {
+          for (let item of resumeData[key]) {
+            console.log('for of loop:', item);
+          }
+        }
+      }
+
+      resumeData.technologySkill.forEach(skill => console.log('forEach skill:', skill));
+
+    </script>
+  </body>
+</html>
